@@ -1,15 +1,81 @@
-Source: template-repository
-Section: unknown
+Source: golang-github-segmentio-ksuid
+Section: golang
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Maintainer: Debian Go Packaging Team <team+pkg-go@tracker.debian.org>
+Uploaders: Anthony Fok <foka@debian.org>
+Rules-Requires-Root: no
+Build-Depends: debhelper-compat (= 13),
+               dh-sequence-golang,
+               golang-any
+Testsuite: autopkgtest-pkg-go
+Standards-Version: 4.6.0
+Vcs-Browser: https://salsa.debian.org/go-team/packages/golang-github-segmentio-ksuid
+Vcs-Git: https://salsa.debian.org/go-team/packages/golang-github-segmentio-ksuid.git
+Homepage: https://github.com/segmentio/ksuid
+XS-Go-Import-Path: github.com/segmentio/ksuid
 
-Package: template-repository
+Package: golang-github-segmentio-ksuid-dev
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: K-Sortable Globally Unique IDs (Go library)
+ ksuid is an efficient, comprehensive, battle-tested Go library for
+ generating and parsing a specific kind of globally unique identifier
+ called a *KSUID*. This library serves as its reference implementation.
+ .
+ What is a KSUID?
+ .
+ KSUID is for K-Sortable Unique IDentifier. It is a kind of globally
+ unique identifier similar to a RFC 4122 UUID, built from the ground-up
+ to be "naturally" sorted by generation timestamp without any special
+ type-aware logic.
+ .
+ In short, running a set of KSUIDs through the UNIX sort command will
+ result in a list ordered by generation time.
+ .
+ Why use KSUIDs?
+ .
+ There are numerous methods for generating unique identifiers, so why
+ KSUID?
+ .
+  1. Naturally ordered by generation time
+  2. Collision-free, coordination-free, dependency-free
+  3. Highly portable representations
+ .
+ See https://segment.com/blog/a-brief-history-of-the-uuid/
+
+Package: ksuid
+Section: utils
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Depends: ${misc:Depends},
+         ${shlibs:Depends}
+Built-Using: ${misc:Built-Using}
+Description: K-Sortable Globally Unique IDs (program)
+ ksuid is an efficient, comprehensive, battle-tested Go library for
+ generating and parsing a specific kind of globally unique identifier
+ called a *KSUID*. This library serves as its reference implementation.
+ .
+ This package comes with a command-line tool ksuid, useful for generating
+ KSUIDs as well as inspecting the internal components of existing KSUIDs.
+ Machine-friendly output is provided for scripting use cases.
+ .
+ What is a KSUID?
+ .
+ KSUID is for K-Sortable Unique IDentifier. It is a kind of globally
+ unique identifier similar to a RFC 4122 UUID, built from the ground-up
+ to be "naturally" sorted by generation timestamp without any special
+ type-aware logic.
+ .
+ In short, running a set of KSUIDs through the UNIX sort command will
+ result in a list ordered by generation time.
+ .
+ Why use KSUIDs?
+ .
+ There are numerous methods for generating unique identifiers, so why
+ KSUID?
+ .
+  1. Naturally ordered by generation time
+  2. Collision-free, coordination-free, dependency-free
+  3. Highly portable representations
+ .
+ See https://segment.com/blog/a-brief-history-of-the-uuid/

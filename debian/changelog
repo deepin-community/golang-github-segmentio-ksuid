@@ -1,5 +1,11 @@
-template-repository (1.0-1) unstable; urgency=medium
+golang-github-segmentio-ksuid (1.0.4-2) unstable; urgency=medium
 
-  * Initial release
+  * Source-only upload for migration to testing
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Anthony Fok <foka@debian.org>  Thu, 16 Dec 2021 00:22:04 -0700
+
+golang-github-segmentio-ksuid (1.0.4-1) unstable; urgency=medium
+
+  * Initial release (Closes: #1001226)
+
+ -- Anthony Fok <foka@debian.org>  Mon, 06 Dec 2021 09:41:48 -0700
